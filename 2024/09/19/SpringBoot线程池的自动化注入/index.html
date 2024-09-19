@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="SpringBoot的线程池的自动注入 本文适合会基本springboot工程创建的人   配置文件pom.xml要导入的包12345&lt;dependency&gt;	&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;spring-boot-configuration-processor&lt;&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/09/19/SpringBoot%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B3%A8%E5%85%A5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="SpringBoot的线程池的自动注入 本文适合会基本springboot工程创建的人   配置文件pom.xml要导入的包12345&lt;dependency&gt;	&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;spring-boot-configuration-processor&lt;&#x2F;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/398c6514f8a84f29a1672c1b2d21d369.png#pic_center">
+<meta property="article:published_time" content="2024-09-19T07:01:22.364Z">
+<meta property="article:modified_time" content="2024-09-19T07:00:23.459Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/direct/398c6514f8a84f29a1672c1b2d21d369.png#pic_center">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-SpringBoot线程池的自动化注入" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/09/19/SpringBoot%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B3%A8%E5%85%A5/" class="article-date">
+  <time class="dt-published" datetime="2024-09-19T07:01:22.364Z" itemprop="datePublished">2024-09-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="SpringBoot的线程池的自动注入"><a href="#SpringBoot的线程池的自动注入" class="headerlink" title="SpringBoot的线程池的自动注入"></a>SpringBoot的线程池的自动注入</h1><blockquote>
+<p>本文适合会基本springboot工程创建的人</p>
+</blockquote>
+<p><img src="https://i-blog.csdnimg.cn/direct/398c6514f8a84f29a1672c1b2d21d369.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="pom-xml要导入的包"><a href="#pom-xml要导入的包" class="headerlink" title="pom.xml要导入的包"></a>pom.xml要导入的包</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 为了读取配置文件 --&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="application-yml"><a href="#application-yml" class="headerlink" title="application.yml"></a>application.yml</h3><blockquote>
+<p>设置你需要的配置</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">thread:</span></span><br><span class="line">  <span class="attr">pool:</span></span><br><span class="line">    <span class="attr">executor:</span></span><br><span class="line">      <span class="attr">config:</span></span><br><span class="line">        <span class="attr">core-pool-size:</span> <span class="number">20</span></span><br><span class="line">        <span class="attr">max-pool-size:</span> <span class="number">200</span></span><br><span class="line">        <span class="attr">keep-alive-time:</span> <span class="number">10</span></span><br><span class="line">        <span class="attr">block-queue-size:</span> <span class="number">5000</span></span><br><span class="line">        <span class="attr">policy:</span> <span class="string">CallerRunsPolicy</span></span><br></pre></td></tr></table></figure>
+<h2 id="读取配置文件"><a href="#读取配置文件" class="headerlink" title="读取配置文件"></a>读取配置文件</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;thread.pool.executor.config&quot;, ignoreInvalidFields = true)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadPoolConfigProperties</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 核心线程数 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Integer</span> <span class="variable">corePoolSize</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">    <span class="comment">/** 最大线程数 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Integer</span> <span class="variable">maxPoolSize</span> <span class="operator">=</span> <span class="number">200</span>;</span><br><span class="line">    <span class="comment">/** 最大等待时间 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Long</span> <span class="variable">keepAliveTime</span> <span class="operator">=</span> <span class="number">10L</span>;</span><br><span class="line">    <span class="comment">/** 最大队列数 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Integer</span> <span class="variable">blockQueueSize</span> <span class="operator">=</span> <span class="number">5000</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">String</span> <span class="variable">policy</span> <span class="operator">=</span> <span class="string">&quot;AbortPolicy&quot;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="prefix"><a href="#prefix" class="headerlink" title="prefix"></a><code>prefix</code></h3><blockquote>
+<p>读取文件中的前缀</p>
+</blockquote>
+<h3 id="ignoreInvalidFields字段含义"><a href="#ignoreInvalidFields字段含义" class="headerlink" title="ignoreInvalidFields字段含义"></a><code>ignoreInvalidFields</code>字段含义</h3><blockquote>
+<p>ignoreInvalidFields: 当这个属性设置为true时，Spring会忽略配置文件中那些与配置类字段不匹配的属性。这意味着，如果配置文件中存在与配置类字段不存在的属性，Spring不会抛出异常，而是忽略这些属性。</p>
+</blockquote>
+<h3 id="Policy属性"><a href="#Policy属性" class="headerlink" title="Policy属性"></a><code>Policy</code>属性</h3><ul>
+<li><code>AbortPolicy</code>：丢弃任务并抛出RejectedExecutionException异常。</li>
+<li><code>DiscardPolicy</code>：直接丢弃任务，但是不会抛出异常</li>
+<li><code>DiscardOldestPolicy</code>：将最早进入队列的任务删除，之后再尝试加入队列的任务被拒绝</li>
+<li><code>CallerRunsPolicy</code>：如果任务添加线程池失败，那么主线程自己执行该任务</li>
+</ul>
+<h2 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 开启异步 */</span></span><br><span class="line"><span class="meta">@EnableAsync</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="comment">/** 填写之前读取配置那个类的类名 */</span></span><br><span class="line"><span class="meta">@EnableConfigurationProperties(ThreadPoolConfigProperties.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadPoolConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConditionalOnMissingBean(ThreadPoolExecutor.class)</span></span><br><span class="line">    <span class="keyword">public</span> ThreadPoolExecutor <span class="title function_">threadPoolExecutor</span><span class="params">(ThreadPoolConfigProperties properties)</span> <span class="keyword">throws</span> ClassNotFoundException, InstantiationException, IllegalAccessException &#123;</span><br><span class="line">        <span class="comment">// 实例化策略</span></span><br><span class="line">        RejectedExecutionHandler handler;</span><br><span class="line">        <span class="keyword">switch</span> (properties.getPolicy())&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;DiscardPolicy&quot;</span>:</span><br><span class="line">                handler = <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.DiscardPolicy();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;DiscardOldestPolicy&quot;</span>:</span><br><span class="line">                handler = <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.DiscardOldestPolicy();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;CallerRunsPolicy&quot;</span>:</span><br><span class="line">                handler = <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.CallerRunsPolicy();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                handler = <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.AbortPolicy();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 创建线程池</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>(properties.getCorePoolSize(), </span><br><span class="line">                properties.getMaxPoolSize(),</span><br><span class="line">                properties.getKeepAliveTime(),</span><br><span class="line">                TimeUnit.SECONDS,</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">LinkedBlockingQueue</span>&lt;&gt;(properties.getBlockQueueSize()),</span><br><span class="line">                Executors.defaultThreadFactory(),</span><br><span class="line">                handler);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="ConditionalOnMissingBean的作用"><a href="#ConditionalOnMissingBean的作用" class="headerlink" title="@ConditionalOnMissingBean的作用"></a><code>@ConditionalOnMissingBean</code>的作用</h3><ol>
+<li><strong>条件</strong>：<code>@ConditionalOnMissingBean</code> 注解检查Spring容器中是否已经存在具有指定名称或类型的Bean。如果存在，则不会创建新的Bean。</li>
+<li><strong>名称</strong>：可以通过 <code>name</code> 属性指定Bean的名称。如果指定了名称，则只有当容器中不存在具有该名称的Bean时，才会创建新的Bean。</li>
+<li><strong>类型</strong>：可以通过 <code>type</code> 属性指定Bean的类型。如果指定了类型，则只有当容器中不存在该类型的Bean时，才会创建新的Bean。</li>
+<li><strong>组合条件</strong>：可以同时使用 <code>name</code> 和 <code>type</code> 属性来组合条件，确保只有同时满足名称和类型条件时才会创建Bean。</li>
+<li><strong>依赖条件</strong>：还可以使用 <code>dependentOnBean</code> 属性来指定一个依赖的Bean名称，只有当依赖的Bean存在时，才会创建新的Bean。</li>
+</ol>
+<h3 id="ThreadPoolExecutor参数含义"><a href="#ThreadPoolExecutor参数含义" class="headerlink" title="ThreadPoolExecutor参数含义"></a><code>ThreadPoolExecutor</code>参数含义</h3><ul>
+<li><p><code>properties.getCorePoolSize()</code>: 这个参数表示线程池的基本大小，即在没有任务执行时保持空闲的线程数量。<br>含义: 在创建线程池时，会首先创建这个数量的线程。如果这些线程都忙于处理任务，那么线程池会根据需要创建更多线程，但不会超过最大线程数。</p>
+</li>
+<li><p><code>properties.getMaxPoolSize()</code>: 这个参数表示线程池最大线程数。<br>含义: 当所有核心线程都在执行任务时，线程池会创建额外的线程，直到达到这个最大值。超过这个数的线程会被拒绝执行。</p>
+</li>
+<li><p><code>properties.getKeepAliveTime()</code>: 这个参数表示当线程没有任务执行时，保持空闲的最长时间。<br>含义: 如果空闲线程超过这个时间，则线程会被终止。如果这个值设置为Long.MAX_VALUE，则空闲线程会一直保持活动状态。</p>
+</li>
+<li><p><code>TimeUnit.SECONDS</code>: 这个参数表示keepAliveTime的时间单位。<br>含义: 它指定了keepAliveTime参数的时间单位，在这个例子中是秒。</p>
+</li>
+<li><p><code>new LinkedBlockingQueue&lt;&gt;(properties.getBlockQueueSize())</code>: 这个参数表示用于在线程池任务队列中存储等待执行的任务。<br>含义: LinkedBlockingQueue是一个线程安全的无界队列，它适用于生产者-消费者场景。blockQueueSize是队列的容量，表示队列可以存储的最大任务数量。</p>
+</li>
+<li><p><code>Executors.defaultThreadFactory()</code>: 这个参数表示线程池中线程的工厂。<br>含义: Executors.defaultThreadFactory()提供默认的线程工厂，用于创建线程。默认线程工厂创建的线程没有特别的名称或组，并且具有非守护状态。</p>
+</li>
+<li><p><code>handler</code>: 这个参数表示线程池中的任务拒绝策略。<br>含义: 当线程池达到最大大小，无法继续添加新任务时，会调用拒绝策略。handler可以是ThreadPoolExecutor提供的四种拒绝策略。（上面有说）</p>
+</li>
+</ul>
+<h2 id="导入使用"><a href="#导入使用" class="headerlink" title="导入使用"></a>导入使用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在你需要的地方导入,然后就可以使用了</span></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">ThreadPoolExecutor executor;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/09/19/SpringBoot%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B3%A8%E5%85%A5/" data-id="cm18y2o1i0000qcat04x32jag" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2024/09/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/09/19/SpringBoot%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B3%A8%E5%85%A5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/19/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
