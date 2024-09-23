@@ -9,17 +9,18 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>SpringBoot的线程池的自动注入 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文适合会基本springboot工程创建的人   配置文件pom.xml要导入的包12345&lt;dependency&gt;	&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;spring-boot-configuration-processor&lt;&#x2F;artifactId&gt;&lt;&#x2F;">
+  <meta name="description" content="本文适合会基本springboot工程创建的人">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot的线程池的自动注入">
 <meta property="og:url" content="http://example.com/2024/09/19/SpringBoot%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="本文适合会基本springboot工程创建的人   配置文件pom.xml要导入的包12345&lt;dependency&gt;	&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;spring-boot-configuration-processor&lt;&#x2F;artifactId&gt;&lt;&#x2F;">
+<meta property="og:description" content="本文适合会基本springboot工程创建的人">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://pic.rmb.bdstatic.com/bjh/down/c9585682c275b1e4f6d005d0071d1ec3.jpeg">
 <meta property="article:published_time" content="2024-09-19T07:01:22.364Z">
-<meta property="article:modified_time" content="2024-09-19T14:48:36.819Z">
+<meta property="article:modified_time" content="2024-09-23T03:41:08.654Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="SpringBoot">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic.rmb.bdstatic.com/bjh/down/c9585682c275b1e4f6d005d0071d1ec3.jpeg">
@@ -27,7 +28,7 @@
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-    <link rel="icon" href="/assets/img/head.jpg">
+    <link rel="icon" href="/assets/img/favicon.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -199,7 +200,12 @@
 <p>本文适合会基本springboot工程创建的人</p>
 </blockquote>
 <p><img src="https://pic.rmb.bdstatic.com/bjh/down/c9585682c275b1e4f6d005d0071d1ec3.jpeg" alt="在这里插入图片描述"></p>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="pom-xml要导入的包"><a href="#pom-xml要导入的包" class="headerlink" title="pom.xml要导入的包"></a>pom.xml要导入的包</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 为了读取配置文件 --&gt;</span></span><br></pre></td></tr></table></figure>
+<!-- 为了读取配置文件 -->
+
+<span id="more"></span>
+
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="pom-xml要导入的包"><a href="#pom-xml要导入的包" class="headerlink" title="pom.xml要导入的包"></a>pom.xml要导入的包</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h3 id="application-yml"><a href="#application-yml" class="headerlink" title="application.yml"></a>application.yml</h3><blockquote>
 <p>设置你需要的配置</p>
 </blockquote>
@@ -217,8 +223,6 @@
 <li><code>DiscardOldestPolicy</code>：将最早进入队列的任务删除，之后再尝试加入队列的任务被拒绝</li>
 <li><code>CallerRunsPolicy</code>：如果任务添加线程池失败，那么主线程自己执行该任务</li>
 </ul>
-<span id="more"></span>
-
 <h2 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 开启异步 */</span></span><br><span class="line"><span class="meta">@EnableAsync</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="comment">/** 填写之前读取配置那个类的类名 */</span></span><br><span class="line"><span class="meta">@EnableConfigurationProperties(ThreadPoolConfigProperties.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadPoolConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConditionalOnMissingBean(ThreadPoolExecutor.class)</span></span><br><span class="line">    <span class="keyword">public</span> ThreadPoolExecutor <span class="title function_">threadPoolExecutor</span><span class="params">(ThreadPoolConfigProperties properties)</span> <span class="keyword">throws</span> ClassNotFoundException, InstantiationException, IllegalAccessException &#123;</span><br><span class="line">        <span class="comment">// 实例化策略</span></span><br><span class="line">        RejectedExecutionHandler handler;</span><br><span class="line">        <span class="keyword">switch</span> (properties.getPolicy())&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;DiscardPolicy&quot;</span>:</span><br><span class="line">                handler = <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.DiscardPolicy();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;DiscardOldestPolicy&quot;</span>:</span><br><span class="line">                handler = <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.DiscardOldestPolicy();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;CallerRunsPolicy&quot;</span>:</span><br><span class="line">                handler = <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.CallerRunsPolicy();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                handler = <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.AbortPolicy();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 创建线程池</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>(properties.getCorePoolSize(), </span><br><span class="line">                properties.getMaxPoolSize(),</span><br><span class="line">                properties.getKeepAliveTime(),</span><br><span class="line">                TimeUnit.SECONDS,</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">LinkedBlockingQueue</span>&lt;&gt;(properties.getBlockQueueSize()),</span><br><span class="line">                Executors.defaultThreadFactory(),</span><br><span class="line">                handler);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="ConditionalOnMissingBean的作用"><a href="#ConditionalOnMissingBean的作用" class="headerlink" title="@ConditionalOnMissingBean的作用"></a><code>@ConditionalOnMissingBean</code>的作用</h3><ol>
 <li><strong>条件</strong>：<code>@ConditionalOnMissingBean</code> 注解检查Spring容器中是否已经存在具有指定名称或类型的Bean。如果存在，则不会创建新的Bean。</li>
@@ -282,6 +286,10 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
@@ -352,6 +360,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2024/09/23/docker%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          docker的简单安装及使用
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -533,7 +555,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
             
             <div class="clearfix"></div>

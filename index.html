@@ -20,7 +20,7 @@
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-    <link rel="icon" href="/assets/img/head.jpg">
+    <link rel="icon" href="/assets/img/favicon.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -181,24 +181,7 @@
 <p>本文适合会基本springboot工程创建的人</p>
 </blockquote>
 <p><img src="https://pic.rmb.bdstatic.com/bjh/down/c9585682c275b1e4f6d005d0071d1ec3.jpeg" alt="在这里插入图片描述"></p>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="pom-xml要导入的包"><a href="#pom-xml要导入的包" class="headerlink" title="pom.xml要导入的包"></a>pom.xml要导入的包</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 为了读取配置文件 --&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="application-yml"><a href="#application-yml" class="headerlink" title="application.yml"></a>application.yml</h3><blockquote>
-<p>设置你需要的配置</p>
-</blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">thread:</span></span><br><span class="line">  <span class="attr">pool:</span></span><br><span class="line">    <span class="attr">executor:</span></span><br><span class="line">      <span class="attr">config:</span></span><br><span class="line">        <span class="attr">core-pool-size:</span> <span class="number">20</span></span><br><span class="line">        <span class="attr">max-pool-size:</span> <span class="number">200</span></span><br><span class="line">        <span class="attr">keep-alive-time:</span> <span class="number">10</span></span><br><span class="line">        <span class="attr">block-queue-size:</span> <span class="number">5000</span></span><br><span class="line">        <span class="attr">policy:</span> <span class="string">CallerRunsPolicy</span></span><br></pre></td></tr></table></figure>
-<h2 id="读取配置文件"><a href="#读取配置文件" class="headerlink" title="读取配置文件"></a>读取配置文件</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;thread.pool.executor.config&quot;, ignoreInvalidFields = true)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadPoolConfigProperties</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 核心线程数 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Integer</span> <span class="variable">corePoolSize</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">    <span class="comment">/** 最大线程数 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Integer</span> <span class="variable">maxPoolSize</span> <span class="operator">=</span> <span class="number">200</span>;</span><br><span class="line">    <span class="comment">/** 最大等待时间 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Long</span> <span class="variable">keepAliveTime</span> <span class="operator">=</span> <span class="number">10L</span>;</span><br><span class="line">    <span class="comment">/** 最大队列数 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Integer</span> <span class="variable">blockQueueSize</span> <span class="operator">=</span> <span class="number">5000</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">String</span> <span class="variable">policy</span> <span class="operator">=</span> <span class="string">&quot;AbortPolicy&quot;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="prefix"><a href="#prefix" class="headerlink" title="prefix"></a><code>prefix</code></h3><blockquote>
-<p>读取文件中的前缀</p>
-</blockquote>
-<h3 id="ignoreInvalidFields字段含义"><a href="#ignoreInvalidFields字段含义" class="headerlink" title="ignoreInvalidFields字段含义"></a><code>ignoreInvalidFields</code>字段含义</h3><blockquote>
-<p>ignoreInvalidFields: 当这个属性设置为true时，Spring会忽略配置文件中那些与配置类字段不匹配的属性。这意味着，如果配置文件中存在与配置类字段不存在的属性，Spring不会抛出异常，而是忽略这些属性。</p>
-</blockquote>
-<h3 id="Policy属性"><a href="#Policy属性" class="headerlink" title="Policy属性"></a><code>Policy</code>属性</h3><ul>
-<li><code>AbortPolicy</code>：丢弃任务并抛出RejectedExecutionException异常。</li>
-<li><code>DiscardPolicy</code>：直接丢弃任务，但是不会抛出异常</li>
-<li><code>DiscardOldestPolicy</code>：将最早进入队列的任务删除，之后再尝试加入队列的任务被拒绝</li>
-<li><code>CallerRunsPolicy</code>：如果任务添加线程池失败，那么主线程自己执行该任务</li>
-</ul>
+<!-- 为了读取配置文件 -->
         
       
 
@@ -217,6 +200,10 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
@@ -228,6 +215,179 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2024/09/19/SpringBoot%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B3%A8%E5%85%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Java正则入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/09/23/Java%E6%AD%A3%E5%88%99%E5%85%A5%E9%97%A8/">Java正则入门</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+        
+        
+        <a href="/2024/09/23/Java%E6%AD%A3%E5%88%99%E5%85%A5%E9%97%A8/" class="archive-article-date">
+  	<time datetime="2024-09-23T03:26:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><h3 id="RegEX"><a href="#RegEX" class="headerlink" title="RegEX"></a>RegEX</h3><ul>
+<li>写出正则匹配字符串</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`String regEx = &quot;匹配式&quot;; </span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/09/23/Java%E6%AD%A3%E5%88%99%E5%85%A5%E9%97%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-docker的简单安装及使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/09/23/docker%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/">docker的简单安装及使用</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+        
+        
+        <a href="/2024/09/23/docker%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2024-09-23T03:26:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-下载安装Linux操作系统"><a href="#1-下载安装Linux操作系统" class="headerlink" title="1.下载安装Linux操作系统"></a>1.下载安装Linux操作系统</h2><p><img src="https://i-blog.csdnimg.cn/direct/a88ba7143adc44e09d6203584d8f7fbe.png#pic_center" alt="在这里插入图片描述"></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/09/23/docker%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/">展开全文 >></a>
         </p>
       
 
@@ -370,7 +530,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
             
             <div class="clearfix"></div>
