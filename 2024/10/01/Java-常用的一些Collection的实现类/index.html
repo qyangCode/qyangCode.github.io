@@ -7,24 +7,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Spring注入Bean时用到的注解 | Hexo</title>
+  <title>Java 常用的一些Collection的实现类 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要介绍关于SpringBoot中Bean注入常用到的一些注解   @Conditional">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Spring注入Bean时用到的注解">
-<meta property="og:url" content="http://example.com/2024/09/26/Spring%E6%B3%A8%E5%85%A5Bean%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84%E6%B3%A8%E8%A7%A3/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Java 常用的一些Collection的实现类">
+<meta property="og:url" content="http://example.com/2024/10/01/Java-%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9BCollection%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="本文主要介绍关于SpringBoot中Bean注入常用到的一些注解   @Conditional">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/ad274d0905c143629ffc5c273e414aa8.jpeg#pic_center">
-<meta property="article:published_time" content="2024-09-26T09:30:32.000Z">
-<meta property="article:modified_time" content="2024-09-26T09:34:39.855Z">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/dad27d7ad0aa403aaae4af754373c0fa.jpeg#pic_center">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/0c9e978a574a4a2e995318bcb6bdec1d.jpeg#pic_center">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/9bb95863270d4100bb079f6279acb985.jpeg#pic_center">
+<meta property="article:published_time" content="2024-10-01T12:01:22.000Z">
+<meta property="article:modified_time" content="2024-10-01T12:04:32.309Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="随笔">
-<meta property="article:tag" content="SpringBoot">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i-blog.csdnimg.cn/direct/ad274d0905c143629ffc5c273e414aa8.jpeg#pic_center">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/direct/dad27d7ad0aa403aaae4af754373c0fa.jpeg#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -163,14 +162,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-Spring注入Bean时用到的注解" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-Java-常用的一些Collection的实现类" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Spring注入Bean时用到的注解
+      Java 常用的一些Collection的实现类
     </h1>
   
 
@@ -185,109 +184,428 @@
           </a>
         
         
-        <a href="/2024/09/26/Spring%E6%B3%A8%E5%85%A5Bean%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84%E6%B3%A8%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2024-09-26T09:30:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-26</time>
+        <a href="/2024/10/01/Java-%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9BCollection%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/" class="archive-article-date">
+  	<time datetime="2024-10-01T12:01:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>本文主要介绍关于SpringBoot中Bean注入常用到的一些注解</p>
+        <p><img src="https://i-blog.csdnimg.cn/direct/dad27d7ad0aa403aaae4af754373c0fa.jpeg#pic_center" alt="在这里插入图片描述"></p>
+<span id="more"></span>
+<h2 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a><code>Collection</code></h2><p><img src="https://i-blog.csdnimg.cn/direct/0c9e978a574a4a2e995318bcb6bdec1d.jpeg#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="1-集合基础"><a href="#1-集合基础" class="headerlink" title="1.集合基础"></a>1.集合基础</h3><blockquote>
+<p>Java 集合框架是一个强大的工具，它提供了一套标准化的接口和类，用于存储和操作集合数据。<code>Collection</code> 接口是这个框架的核心，它定义了一系列通用的集合操作。</p>
 </blockquote>
-<p><img src="https://i-blog.csdnimg.cn/direct/ad274d0905c143629ffc5c273e414aa8.jpeg#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="Conditional"><a href="#Conditional" class="headerlink" title="@Conditional"></a><strong><code>@Conditional</code></strong></h2><span id="more"></span>
-
+<h3 id="2-Collection接口方法"><a href="#2-Collection接口方法" class="headerlink" title="2.Collection接口方法"></a>2.<code>Collection</code>接口方法</h3><ul>
+<li><p><code>List list = new ArrayList();</code></p>
 <ul>
-<li><p><strong>用途</strong>：<code>@Conditional</code> 注解用于标记一个配置类或配置方法，告诉Spring根据指定的条件来决定是否应用这个配置。</p>
+<li>创建一个新的空列表，<code>ArrayList</code> 是实现 <code>List</code> 接口的一个常用类，它允许快速随机访问。</li>
+</ul>
 </li>
-<li><p><strong>示例</strong>：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@Conditional(OnPropertyCondition.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyConfig</span> &#123;</span><br><span class="line">    <span class="comment">// 配置类的内容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p><code>list.add(Object o)</code>：</p>
+<ul>
+<li>向列表中添加一个元素。如果元素已存在，则不添加。</li>
 </ul>
-<h3 id="条件接口"><a href="#条件接口" class="headerlink" title="条件接口"></a>条件接口</h3><ul>
-<li><strong>实现条件</strong>：Spring提供了一系列条件接口，例如 <code>OnClassCondition</code>、<code>OnPropertyCondition</code>、<code>OnBeanCondition</code> 等，它们各自对应不同的条件判断逻辑。</li>
-<li>**<code>OnClassCondition</code>**：检查类路径中是否存在指定的类。</li>
-<li>**<code>OnPropertyCondition</code>**：检查系统属性或环境属性中是否存在特定的值。</li>
-<li>**<code>OnBeanCondition</code>**：检查容器中是否存在特定的Bean。</li>
-<li>**<code>OnMissingBeanCondition</code>**：与 <code>OnBeanCondition</code> 相反，检查容器中是否不存在特定的Bean。</li>
-</ul>
-<h3 id="条件类"><a href="#条件类" class="headerlink" title="条件类"></a>条件类</h3><ul>
-<li><p><strong>自定义条件</strong>：除了Spring提供的条件接口，你也可以创建自己的条件类，实现 <code>Condition</code> 接口。<code>Condition</code> 接口定义了一个 <code>matches</code> 方法，这个方法返回一个布尔值，指示是否满足条件。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyCustomCondition</span> <span class="keyword">implements</span> <span class="title class_">Condition</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">matches</span><span class="params">(ConditionContext context, AnnotatedTypeMetadata metadata)</span> &#123;</span><br><span class="line">        <span class="comment">// 实现自定义条件逻辑</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 或者 false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>组合条件</strong>：可以使用 <code>ConditionalComposition</code> 类来组合多个条件。<code>ConditionalComposition</code> 提供了 <code>and</code>、<code>or</code> 和 <code>not</code> 方法来组合条件。</p>
+<li><p><code>list.addAll(Collection c)</code>：</p>
+<ul>
+<li>将指定集合中的所有元素添加到列表中。</li>
+</ul>
+</li>
+<li><p><code>list.remove(Object o)</code>：</p>
+<ul>
+<li>删除列表中首次出现的指定元素。如果没有这样的元素，则不执行任何操作。</li>
+</ul>
+</li>
+<li><p><code>list.removeAll(Collection c)</code>：</p>
+<ul>
+<li>删除列表中与指定集合共有的所有元素。</li>
+</ul>
+</li>
+<li><p><code>list.contains(Object o)</code>：</p>
+<ul>
+<li>判断列表中是否包含指定元素。</li>
+</ul>
+</li>
+<li><p><code>list.containsAll(Collection c)</code>：</p>
+<ul>
+<li>判断列表中是否包含指定集合中的所有元素。</li>
+</ul>
+</li>
+<li><p><code>list.size()</code>：</p>
+<ul>
+<li>返回列表中的元素数量。</li>
+</ul>
+</li>
+<li><p><code>list.isEmpty()</code>：</p>
+<ul>
+<li>判断列表是否为空。</li>
+</ul>
+</li>
+<li><p><code>list.clear()</code>：</p>
+<ul>
+<li>清空列表中的所有元素。</li>
+</ul>
 </li>
 </ul>
-<h3 id="ConditionalOnProperty"><a href="#ConditionalOnProperty" class="headerlink" title="@ConditionalOnProperty"></a><strong><code>@ConditionalOnProperty</code></strong></h3><p><code>@ConditionalOnProperty</code> 注解有几个可选属性，允许你精细控制条件匹配的逻辑：</p>
-<ul>
-<li><code>name</code>：配置属性的名称。默认情况下，它使用注解所在位置的方法名作为属性名。</li>
-<li><code>havingValue</code>：配置属性的预期值。如果配置属性存在并且其值与指定值匹配，则条件成立。</li>
-<li><code>notHavingValue</code>：与 <code>havingValue</code> 相反，配置属性存在但值不匹配时条件成立。</li>
-<li><code>matchIfMissing</code>：如果配置属性不存在，条件是否成立。默认情况下，如果属性不存在，条件不成立。</li>
-<li><code>havingAnyValue</code>：如果配置属性的值是列表中的任何一个，则条件成立。</li>
-<li><code>notMatchIfMissing</code>：与 <code>matchIfMissing</code> 相反，如果配置属性不存在，条件不成立。</li>
-</ul>
-<h3 id="ConditionalOnMissingBean"><a href="#ConditionalOnMissingBean" class="headerlink" title="@ConditionalOnMissingBean"></a><strong><code>@ConditionalOnMissingBean</code></strong></h3><ol>
-<li><strong>条件</strong>：<code>@ConditionalOnMissingBean</code> 注解检查Spring容器中是否已经存在具有指定名称或类型的Bean。如果存在，则不会创建新的Bean。</li>
-<li><strong>名称</strong>：可以通过 <code>name</code> 属性指定Bean的名称。如果指定了名称，则只有当容器中不存在具有该名称的Bean时，才会创建新的Bean。</li>
-<li><strong>类型</strong>：可以通过 <code>type</code> 属性指定Bean的类型。如果指定了类型，则只有当容器中不存在该类型的Bean时，才会创建新的Bean。</li>
-<li><strong>组合条件</strong>：可以同时使用 <code>name</code> 和 <code>type</code> 属性来组合条件，确保只有同时满足名称和类型条件时才会创建Bean。</li>
-<li><strong>依赖条件</strong>：还可以使用 <code>dependentOnBean</code> 属性来指定一个依赖的Bean名称，只有当依赖的Bean存在时，才会创建新的Bean。</li>
-</ol>
-<hr>
-<h2 id="EnableConfigurationProperties"><a href="#EnableConfigurationProperties" class="headerlink" title="@EnableConfigurationProperties"></a><code>@EnableConfigurationProperties</code></h2><h3 id="配置属性类"><a href="#配置属性类" class="headerlink" title="配置属性类"></a>配置属性类</h3><p>配置属性类通常遵循以下规范：</p>
-<ul>
-<li>类上使用 <code>@ConfigurationProperties</code> 注解。</li>
-<li>字段名应与配置文件中的属性名匹配（默认情况下，字段名和属性名是自动映射的，但不区分大小写）。</li>
-<li>可选地，可以指定 <code>prefix</code> 属性来定义配置文件中属性的命名前缀。</li>
-</ul>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>假设你有一个配置属性类 <code>MyProperties</code>，它定义了两个属性，对应 <code>application.properties</code> 文件中的 <code>myapp</code> 前缀下的属性：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;myapp&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyProperties</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String exampleProperty;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> anotherProperty;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Getters and setters for the properties</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来，在配置类中使用 <code>@EnableConfigurationProperties</code> 注解来启用 <code>MyProperties</code> 类的自动配置：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableConfigurationProperties(MyProperties.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MyProperties myProperties;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用 myProperties 字段</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h3><p>一旦启用了配置属性类的自动配置，Spring会自动：</p>
-<ul>
-<li>创建配置属性类的Bean。</li>
-<li>将配置文件中的属性值绑定到配置属性类的字段上。</li>
-<li>自动装配配置属性类的Bean到任何需要它的地方。</li>
-</ul>
-<h2 id="Profile"><a href="#Profile" class="headerlink" title="@Profile"></a><code>@Profile</code></h2><p><code>@Profile</code> 注解用于指定一个Bean或配置只在特定的Spring配置文件（profile）激活时才生效。Spring支持多个配置文件，每个配置文件可以针对不同的运行环境（如开发、测试、生产等）。</p>
-<ul>
-<li><code>@Profile(&#123;&quot;prod&quot;, &quot;test&quot;&#125;)</code> 这里的括号内列出了多个环境名称（<code>prod</code> 和 <code>test</code>），这意味着被这个注解标记的Bean或配置仅在激活了名为 <code>prod</code> 或 <code>test</code> 的profile时才会被加载和使用。</li>
-</ul>
-<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@Profile(&#123;&quot;prod&quot;, &quot;test&quot;&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> SomeBean <span class="title function_">someBean</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">SomeBean</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>MyConfig</code> 类中定义的 <code>someBean()</code> 方法只有在 <code>prod</code> 或 <code>test</code> profile被激活时才会创建 <code>SomeBean</code> 的实例。</p>
-<h2 id="Lazy"><a href="#Lazy" class="headerlink" title="@Lazy"></a><code>@Lazy</code></h2><p><code>@Lazy</code> 注解用于指示Spring容器在首次请求Bean时才创建它的实例。默认情况下，Spring容器会在应用启动时创建所有单例Bean的实例。使用 <code>@Lazy</code> 可以延迟Bean的创建，这对于减少应用启动时的资源消耗或实现其他逻辑（如懒加载）很有帮助。</p>
-<ul>
-<li>当 <code>@Lazy</code> 与 <code>@Profile</code> 结合使用时，它会影响Bean的创建时机，即使配置文件被激活。</li>
-</ul>
-<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@Profile(&#123;&quot;prod&quot;, &quot;test&quot;&#125;)</span></span><br><span class="line"><span class="meta">@Lazy</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> SomeBean <span class="title function_">someBean</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">SomeBean</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Primary"><a href="#Primary" class="headerlink" title="@Primary"></a><strong><code>@Primary</code></strong></h2><blockquote>
-<p><code>@Primary</code> 是Spring框架中的一个注解，用于指定在存在多个Bean候选者时，哪一个应该被首选注入。在依赖注入时，如果存在多个Bean实现了相同的接口或符合相同的类型，Spring需要决定使用哪个Bean。在这种情况下，<code>@Primary</code> 注解可以帮助Spring决定首选的Bean。</p>
+<h3 id="3-Iterator"><a href="#3-Iterator" class="headerlink" title="3.Iterator"></a>3.<code>Iterator</code></h3><blockquote>
+<p><code>Iterator</code> 接口用于遍历集合中的元素。</p>
 </blockquote>
-<h2 id="使用-DependsOn"><a href="#使用-DependsOn" class="headerlink" title="使用 @DependsOn"></a>使用 <code>@DependsOn</code></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@DependsOn(&#123;&quot;openai_model&quot;, &quot;openai_use_count&quot;, &quot;user_credit_random&quot;&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyConfig</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>MyConfig</code> 配置类会在 <code>openai_model</code>、<code>openai_use_count</code> 和 <code>user_credit_random</code> 这些Bean创建之后创建。</p>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
-<li><code>value</code>：一个字符串数组，指定了依赖于的Bean的名称。</li>
+<ul>
+<li><p><code>Iterator iterator = list.iterator();</code></p>
+<ul>
+<li>创建一个迭代器实例，用于遍历指定的集合。</li>
 </ul>
-<h2 id="PreDestroy-PostConstruct"><a href="#PreDestroy-PostConstruct" class="headerlink" title="@PreDestroy | @PostConstruct"></a><code>@PreDestroy | @PostConstruct</code></h2><blockquote>
-<p><code>@PostConstruct</code> 是Java EE（Java Platform, Enterprise Edition）的一个注解，它用于标记一个方法，这个方法应该在应用初始化之后运行。它通常用于在依赖注入容器（如Spring框架中的Bean）初始化Bean之后执行一些初始化代码。</p>
-<p><code>@PreDestroy</code> 是Java EE（Java Platform, Enterprise Edition）的一个注解，用于标记一个方法，这个方法将在应用关闭或容器销毁Bean之前运行。它通常用于清理资源，如关闭数据库连接、释放文件句柄等。</p>
+</li>
+<li><p><code>while(iterator.hasNext()) &#123; ... &#125;</code></p>
+<ul>
+<li>检查迭代器是否有下一个元素。</li>
+</ul>
+</li>
+<li><p><code>Object o = iterator.next();</code></p>
+<ul>
+<li>返回迭代器的下一个元素。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Collection的实现类"><a href="#Collection的实现类" class="headerlink" title="Collection的实现类"></a><code>Collection</code>的实现类</h2><h3 id="1-List"><a href="#1-List" class="headerlink" title="1.List"></a>1.List</h3><blockquote>
+<p><code>List</code> 接口继承自 <code>Collection</code>，它不仅保证了元素的唯一性，还保证了元素的顺序。</p>
 </blockquote>
-<h2 id="PropertySource"><a href="#PropertySource" class="headerlink" title="@PropertySource"></a><code>@PropertySource</code></h2><p><code>@PropertySource</code> 注解用于指定一个或多个配置文件的位置，Spring容器会从这些位置加载属性文件，并将其属性添加到Spring的环境中。</p>
-<h3 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.PropertySource;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@PropertySource(&quot;classpath:properties/application.properties&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppConfig</span> &#123;</span><br><span class="line">    <span class="comment">// ...配置类代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>AppConfig</code> 配置类使用了 <code>@PropertySource</code> 注解来指定 <code>application.properties</code> 文件的位置，该文件应该位于类路径下 <code>properties</code> 目录中。</p>
-<h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><ul>
-<li><code>value</code> 或 <code>locations</code>：这两个参数可以用来指定属性文件的位置。<code>value</code> 参数接受一个字符串数组，而 <code>locations</code> 参数接受一个 <code>PropertySource</code> 对象数组。</li>
+<h4 id="1-1-list接口方法"><a href="#1-1-list接口方法" class="headerlink" title="1.1 list接口方法"></a>1.1 <code>list</code>接口方法</h4><ul>
+<li><p><code>list.get(int index)</code>：</p>
+<ul>
+<li>返回列表中指定索引处的元素。</li>
 </ul>
-<h2 id="ImportResource"><a href="#ImportResource" class="headerlink" title="@ImportResource"></a><code>@ImportResource</code></h2><p><code>@ImportResource</code> 注解用于从XML配置文件中加载Bean定义。在Spring 3.1及以后版本中，推荐使用基于Java的配置方式，但有时仍然需要与传统的XML配置文件一起使用。</p>
+</li>
+<li><p><code>list.add(int index, Object o)</code>：</p>
+<ul>
+<li>在列表的指定位置插入元素。</li>
+</ul>
+</li>
+<li><p><code>list.addAll(int index, Collection c)</code>：</p>
+<ul>
+<li>从指定位置开始，将指定集合中的所有元素添加到列表中。</li>
+</ul>
+</li>
+<li><p><code>list.indexOf(Object o)</code>：</p>
+<ul>
+<li>返回指定元素第一次出现的索引，如果不存在，返回 -1。</li>
+</ul>
+</li>
+<li><p><code>list.lastIndexOf(Object o)</code>：</p>
+<ul>
+<li>返回指定元素最后一次出现的索引，如果不存在，返回 -1。</li>
+</ul>
+</li>
+<li><p><code>list.remove(int index)</code>：</p>
+<ul>
+<li>删除列表中指定索引处的元素。</li>
+</ul>
+</li>
+<li><p><code>list.set(int index, Object o)</code>：</p>
+<ul>
+<li>用指定元素替换列表中指定索引处的元素。</li>
+</ul>
+</li>
+<li><p><code>list.subList(int fromIndex, int toIndex)</code>：</p>
+<ul>
+<li>返回列表中从 fromIndex（包含）到 toIndex（不包含）的子列表。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-2-ArrayList"><a href="#1-2-ArrayList" class="headerlink" title="1.2 ArrayList"></a>1.2 ArrayList</h4><p><img src="https://i-blog.csdnimg.cn/direct/9bb95863270d4100bb079f6279acb985.jpeg#pic_center" alt="在这里插入图片描述"></p>
+<blockquote>
+<p><code>ArrayList</code> 是一个动态数组实现，它允许在数组中进行快速随机访问。</p>
+</blockquote>
+<h5 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h5><blockquote>
+<p>当 <code>ArrayList</code> 需要更多空间时，它会进行扩容。如果不指定初始容量，默认初始容量为 10，每次扩容时大小会增加大约 50%。</p>
+</blockquote>
+<h4 id="1-3-LinkedList"><a href="#1-3-LinkedList" class="headerlink" title="1.3 LinkedList"></a>1.3 LinkedList</h4><blockquote>
+<p><code>LinkedList</code> 是 Java 集合框架中 <code>List</code> 接口的一个实现类，它是一个双向链表。与基于数组的集合（如 <code>ArrayList</code>）相比，<code>LinkedList</code> 提供了在列表中的任意位置高效插入和删除元素的能力。</p>
+</blockquote>
+<h5 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h5><ul>
+<li><strong>双向链表</strong>：每个元素（称为节点）都包含指向其前一个元素和后一个元素的引用。</li>
+<li><strong>动态大小</strong>：<code>LinkedList</code> 可以动态地添加和删除元素，不需要预先定义大小。</li>
+<li><strong>非同步</strong>：<code>LinkedList</code> 不是线程安全的，如果你在多线程环境中使用，可能需要外部的同步机制。</li>
+<li><strong>内存使用</strong>：由于每个节点包含额外的指针，<code>LinkedList</code> 相对于 <code>ArrayList</code> 可能会使用更多的内存。</li>
+</ul>
+<h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><ul>
+<li><p><code>LinkedList()</code></p>
+<ul>
+<li>创建一个空的 <code>LinkedList</code>。</li>
+</ul>
+</li>
+<li><p><code>LinkedList(Collection&lt;? extends E&gt; c)</code></p>
+<ul>
+<li>创建一个新的 <code>LinkedList</code>，包含指定集合中的所有元素。</li>
+</ul>
+</li>
+<li><p><code>add(E e)</code></p>
+<ul>
+<li>在列表的末尾添加一个元素。</li>
+</ul>
+</li>
+<li><p><code>add(int index, E element)</code></p>
+<ul>
+<li>在列表的指定位置插入元素。</li>
+</ul>
+</li>
+<li><p><code>addFirst(E e)</code></p>
+<ul>
+<li>在列表的开头添加一个元素。</li>
+</ul>
+</li>
+<li><p><code>addLast(E e)</code></p>
+<ul>
+<li>在列表的末尾添加一个元素，这是 <code>add</code> 方法的别名。</li>
+</ul>
+</li>
+<li><p><code>get(int index)</code></p>
+<ul>
+<li>返回列表中指定位置的元素。</li>
+</ul>
+</li>
+<li><p><code>set(int index, E element)</code></p>
+<ul>
+<li>用指定元素替换列表中指定位置的元素。</li>
+</ul>
+</li>
+<li><p><code>remove(Object o)</code></p>
+<ul>
+<li>移除列表中首次出现的指定元素。</li>
+</ul>
+</li>
+<li><p><code>remove(int index)</code></p>
+<ul>
+<li>移除列表中指定位置的元素。</li>
+</ul>
+</li>
+<li><p><code>removeFirst()</code></p>
+<ul>
+<li>移除并返回列表中的第一个元素。</li>
+</ul>
+</li>
+<li><p><code>removeLast()</code></p>
+<ul>
+<li>移除并返回列表中的最后一个元素。</li>
+</ul>
+</li>
+<li><p><code>poll()</code></p>
+<ul>
+<li>移除并返回列表中的第一个元素，如果没有元素，则返回 <code>null</code>。</li>
+</ul>
+</li>
+<li><p><code>pollFirst()</code></p>
+<ul>
+<li>移除并返回列表中的第一个元素，如果没有元素，则返回 <code>null</code>，这是 <code>poll</code> 方法的别名。</li>
+</ul>
+</li>
+<li><p><code>pollLast()</code></p>
+<ul>
+<li>移除并返回列表中的最后一个元素，如果没有元素，则返回 <code>null</code>。</li>
+</ul>
+</li>
+<li><p><code>peek()</code></p>
+<ul>
+<li>返回列表中的第一个元素，如果没有元素，则返回 <code>null</code>。</li>
+</ul>
+</li>
+<li><p><code>peekFirst()</code></p>
+<ul>
+<li>返回列表中的第一个元素，如果没有元素，则返回 <code>null</code>，这是 <code>peek</code> 方法的别名。</li>
+</ul>
+</li>
+<li><p><code>peekLast()</code></p>
+<ul>
+<li>返回列表中的最后一个元素，如果没有元素，则返回 <code>null</code>。</li>
+</ul>
+</li>
+<li><p><code>size()</code></p>
+<ul>
+<li>返回列表中的元素数量。</li>
+</ul>
+</li>
+<li><p><code>isEmpty()</code></p>
+<ul>
+<li>判断列表是否为空。</li>
+</ul>
+</li>
+<li><p><code>clear()</code></p>
+<ul>
+<li>清空列表中的所有元素。</li>
+</ul>
+</li>
+<li><p><code>indexOf(Object o)</code></p>
+<ul>
+<li>返回列表中首次出现的指定元素的索引，如果不存在，返回 -1。</li>
+</ul>
+</li>
+<li><p><code>lastIndexOf(Object o)</code></p>
+<ul>
+<li>返回列表中最后出现的指定元素的索引，如果不存在，返回 -1。</li>
+</ul>
+</li>
+<li><p><code>subList(int fromIndex, int toIndex)</code></p>
+<ul>
+<li>返回列表中从 fromIndex（包含）到 toIndex（不包含）的子列表。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-Map"><a href="#2-Map" class="headerlink" title="2. Map"></a>2. Map</h3><blockquote>
+<p><code>Map</code> 接口表示键值对的集合，它不保证元素的顺序。</p>
+</blockquote>
+<h4 id="2-1TreeMap"><a href="#2-1TreeMap" class="headerlink" title="2.1TreeMap"></a>2.1TreeMap</h4><blockquote>
+<p><code>TreeMap</code> 是一个基于红黑树实现的 <code>NavigableMap</code>，它按照键的自然顺序或者提供的比较器进行排序。</p>
+</blockquote>
+<h5 id="TreeMap-特性"><a href="#TreeMap-特性" class="headerlink" title="TreeMap 特性"></a>TreeMap 特性</h5><ul>
+<li>自动排序</li>
+<li>提供了访问最大键、最小键以及获取键值对的方法。</li>
+<li><code>floorEntry(int key)</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回一个 `Map.Entry` 对象，它映射到小于或等于指定键的最大键值对。</span></span><br><span class="line">Map.Entry&lt;Integer, Integer&gt; integerEntry = treeMap.floorEntry(key);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-Queue"><a href="#3-Queue" class="headerlink" title="3.Queue"></a>3.Queue</h3><blockquote>
+<p><code>Queue</code> 接口表示一个先进先出（FIFO）的集合。</p>
+</blockquote>
+<h4 id="3-1PriorityQueue"><a href="#3-1PriorityQueue" class="headerlink" title="3.1PriorityQueue"></a>3.1PriorityQueue</h4><blockquote>
+<p><code>PriorityQueue</code> 是一个基于优先级堆的无界队列，元素根据自然顺序或提供的比较器排序。- - -</p>
+</blockquote>
+<ul>
+<li>PriorityQueue 使用<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#创建一个优先队列，其中元素按照降序排序。</span><br><span class="line">PriorityQueue&lt;Integer&gt; queue = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;((a, b) -&gt; b - a); </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="4-Deque的实现类ArrayDeque"><a href="#4-Deque的实现类ArrayDeque" class="headerlink" title="4.Deque的实现类ArrayDeque"></a>4.Deque的实现类ArrayDeque</h3><blockquote>
+<p><code>ArrayDeque</code> 是 Java 集合框架中 <code>Deque</code>（双端队列）接口的一个实现类。它是一个可调整大小的数组实现的队列，提供了在两端快速插入和删除元素的能力。</p>
+</blockquote>
+<h4 id="特性-1"><a href="#特性-1" class="headerlink" title="特性"></a>特性</h4><ul>
+<li><strong>双端队列</strong>：支持在队列的两端进行插入（offer、add）和删除（poll、remove）操作。</li>
+<li><strong>可调整大小</strong>：内部数组大小会根据需要动态调整，以容纳更多的元素。</li>
+<li><strong>非同步</strong>：<code>ArrayDeque</code> 不是线程安全的，如果你在多线程环境中使用，可能需要外部的同步机制。</li>
+<li><strong>迭代器</strong>：提供迭代器支持，允许遍历双端队列中的元素。</li>
+</ul>
+<h4 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><p><code>ArrayDeque()</code></p>
+<ul>
+<li>创建一个空的双端队列。</li>
+</ul>
+</li>
+<li><p><code>ArrayDeque(int initialCapacity)</code></p>
+<ul>
+<li>创建一个具有指定初始容量的空双端队列。</li>
+</ul>
+</li>
+<li><p><code>offerFirst(E e)</code></p>
+<ul>
+<li>在队列的开头插入元素。</li>
+</ul>
+</li>
+<li><p><code>offerLast(E e)</code></p>
+<ul>
+<li>在队列的末尾插入元素。</li>
+</ul>
+</li>
+<li><p><code>addFirst(E e)</code></p>
+<ul>
+<li>在队列的开头插入元素，如果队列已满，则抛出 <code>IllegalStateException</code>。</li>
+</ul>
+</li>
+<li><p><code>addLast(E e)</code></p>
+<ul>
+<li>在队列的末尾插入元素，如果队列已满，则抛出 <code>IllegalStateException</code>。</li>
+</ul>
+</li>
+<li><p><code>removeFirst()</code></p>
+<ul>
+<li>移除并返回队列开头的元素。</li>
+</ul>
+</li>
+<li><p><code>removeLast()</code></p>
+<ul>
+<li>移除并返回队列末尾的元素。</li>
+</ul>
+</li>
+<li><p><code>pollFirst()</code></p>
+<ul>
+<li>移除并返回队列开头的元素，如果没有元素，则返回 <code>null</code>。</li>
+</ul>
+</li>
+<li><p><code>pollLast()</code></p>
+<ul>
+<li>移除并返回队列末尾的元素，如果没有元素，则返回 <code>null</code>。</li>
+</ul>
+</li>
+<li><p><code>getFirst()</code></p>
+<ul>
+<li>返回队列开头的元素，如果没有元素，则抛出 <code>NoSuchElementException</code>。</li>
+</ul>
+</li>
+<li><p><code>getLast()</code></p>
+<ul>
+<li>返回队列末尾的元素，如果没有元素，则抛出 <code>NoSuchElementException</code>。</li>
+</ul>
+</li>
+<li><p><code>peekFirst()</code></p>
+<ul>
+<li>返回队列开头的元素，如果没有元素，则返回 <code>null</code>。</li>
+</ul>
+</li>
+<li><p><code>peekLast()</code></p>
+<ul>
+<li>返回队列末尾的元素，如果没有元素，则返回 <code>null</code>。</li>
+</ul>
+</li>
+<li><p><code>size()</code></p>
+<ul>
+<li>返回队列中的元素数量。</li>
+</ul>
+</li>
+<li><p><code>isEmpty()</code></p>
+<ul>
+<li>判断队列是否为空。</li>
+</ul>
+</li>
+<li><p><code>clear()</code></p>
+<ul>
+<li>清空队列中的所有元素。</li>
+</ul>
+</li>
+</ul>
+<h2 id="对比使用"><a href="#对比使用" class="headerlink" title="对比使用"></a>对比使用</h2><h3 id="1-ArrayDeque-与-LinkedList-的优劣？"><a href="#1-ArrayDeque-与-LinkedList-的优劣？" class="headerlink" title="1. ArrayDeque 与 LinkedList 的优劣？"></a>1. ArrayDeque 与 LinkedList 的优劣？</h3><blockquote>
+<p>ArrayDeque 和 LinkedList 都实现了 Queue 和 Deque 接口</p>
+</blockquote>
+<h4 id="1-1-ArrayDeque（数组双端队列）："><a href="#1-1-ArrayDeque（数组双端队列）：" class="headerlink" title="1.1 ArrayDeque（数组双端队列）："></a>1.1 ArrayDeque（<strong>数组</strong>双端队列）：</h4><blockquote>
+<p> 1.内部使用数组来存储元素，因此支持随机访问和快速索引。<br>    2.在队尾进行插入和删除操作的性能很好，时间复杂度为 O(1)。<br>    3.在队头进行插入和删除操作需要移动元素，因此时间复杂度O(n).<br>       4.不支持 null 元素。</p>
+</blockquote>
+<h4 id="1-2-LinkedList（链表）："><a href="#1-2-LinkedList（链表）：" class="headerlink" title="1.2 LinkedList（链表）："></a>1.2 LinkedList（<strong>链表</strong>）：</h4><blockquote>
+<p>1.内部使用双向链表来存储元素，因此插入和删除操作的性能比ArrayDeque 更好。<br> 2.在队头和队尾进行插入和删除操作的时间复杂度都是 O(1)。<br> 3.支持 null 元素。<br> 4.不支持随机访问，访问元素需要按照链表顺序遍历，因此时间复杂度为 O(n)。</p>
+</blockquote>
+<p>优劣势比较：</p>
+<blockquote>
+<p> 如果需要频繁在<strong>队头和队尾</strong>进行插入和删除操作，并且不需要随机访问元素，选择 LinkedList 更合适，因为它的插入和删除性能更好。</p>
+</blockquote>
+<blockquote>
+<p> 如果需要频繁进行<strong>随机访问或者在队尾进行插入和删除操作</strong>，并且不会频繁在队头进行插入和删除操作，选择 ArrayDeque 更合适，因为它在这些方面的性能更好。</p>
+</blockquote>
+<h3 id="2-那Stack呢"><a href="#2-那Stack呢" class="headerlink" title="2. 那Stack呢?"></a>2. 那Stack呢?</h3><blockquote>
+<p>优势：<br>    1.简单易用：Stack 提供了 push、pop、peek 等方法，使得在栈的操作上非常直观和简单。<br>    2.符合栈的特性：栈的特性是后进先出（LIFO），Stack 类的操作方法符合这一特性，可以方便地实现栈的				 功能。</p>
+</blockquote>
+<h4 id="限制和注意事项："><a href="#限制和注意事项：" class="headerlink" title="限制和注意事项："></a>限制和注意事项：</h4><blockquote>
+<p>继承自 Vector： Stack 是 Vector 的子类，因此它基于数组实现，会受到数组扩容和拷贝的性能影响。</p>
+</blockquote>
+<pre><code>线程安全性： Stack 是线程安全的，但由于继承自 Vector，其性能相对较低。在多线程环境下，推荐使			    用并发包中的类，如 ConcurrentLinkedDeque。
+</code></pre>
+<h4 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h4><blockquote>
+<p>如果需要使用栈这种数据结构，并且操作相对简单，不需要高性能和大规模并发，Stack 是一个合适的选择。但是在需要高性能或者多线程环境下，可以考虑使用其他更适合的数据结构，比如 ArrayDeque 或 ConcurrentLinkedDeque。</p>
+</blockquote>
+<h3 id="3-ConcurrentLinkedDeque"><a href="#3-ConcurrentLinkedDeque" class="headerlink" title="3. ConcurrentLinkedDeque"></a>3. ConcurrentLinkedDeque</h3><blockquote>
+<p>ConcurrentLinkedDeque 是 Java 中的一个并发安全的双端队列实现，它提供了高效的并发操作支持，并且不需要使用显式的同步措施（如锁），因此适合在多线程环境下使用。</p>
+</blockquote>
+<h4 id="特点和优势："><a href="#特点和优势：" class="headerlink" title="特点和优势："></a>特点和优势：</h4><blockquote>
+<p>1.<code>并发安全性</code>： ConcurrentLinkedDeque 是线程安全的数据结构，可以在多线程环境下安全地进行操作，无				 需额外的同步措施。<br>    2.<code>非阻塞操作</code>： 内部实现采用了无锁算法（lock-free），因此不会发生线程阻塞，提高了并发性能。<br>    3.<code>双端队列</code>： 支持在队头和队尾进行插入、删除等操作，具有良好的灵活性。<br>    4.<code>高效性能</code>： 在多线程环境下，ConcurrentLinkedDeque 提供了较高的性能，适用于高并发的场景。<br>    5.<code>无边界</code>： ConcurrentLinkedDeque 没有固定的容量限制，可以根据需要动态调整大小。</p>
+</blockquote>
+<blockquote>
+<p>如果需要在多线程环境下使用双端队列，并且对性能有较高要求，那么 ConcurrentLinkedDeque 是一个很好的选择。它避免了传统同步机制（如锁）带来的性能开销和线程阻塞问题，提供了高效的并发操作支持。</p>
+</blockquote>
+<h3 id="4-示例"><a href="#4-示例" class="headerlink" title="4. 示例"></a>4. 示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.ConcurrentLinkedDeque;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建 ConcurrentLinkedDeque 实例：</span></span><br><span class="line">ConcurrentLinkedDeque&lt;String&gt; deque = <span class="keyword">new</span> <span class="title class_">ConcurrentLinkedDeque</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加元素：</span></span><br><span class="line">deque.add(<span class="string">&quot;First&quot;</span>);</span><br><span class="line">deque.add(<span class="string">&quot;Second&quot;</span>);</span><br><span class="line">deque.offer(<span class="string">&quot;Third&quot;</span>); <span class="comment">// 在队尾添加元素</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//移除元素：</span></span><br><span class="line"><span class="type">String</span> <span class="variable">firstElement</span> <span class="operator">=</span> deque.poll(); <span class="comment">// 移除并返回队头元素</span></span><br><span class="line"><span class="type">String</span> <span class="variable">lastElement</span> <span class="operator">=</span> deque.pollLast(); <span class="comment">// 移除并返回队尾元素</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取元素：</span></span><br><span class="line"><span class="type">String</span> <span class="variable">peekFirstElement</span> <span class="operator">=</span> deque.peek(); <span class="comment">// 获取但不移除队头元素</span></span><br><span class="line"><span class="type">String</span> <span class="variable">peekLastElement</span> <span class="operator">=</span> deque.peekLast(); <span class="comment">// 获取但不移除队尾元素</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历元素：</span></span><br><span class="line"><span class="keyword">for</span> (String element : deque) &#123;</span><br><span class="line">    System.out.println(element);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//其他操作：</span></span><br><span class="line"><span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> deque.size(); <span class="comment">// 获取队列大小</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">isEmpty</span> <span class="operator">=</span> deque.isEmpty(); </span><br></pre></td></tr></table></figure>
 
       
 
@@ -326,11 +644,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -386,8 +700,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/09/26/Spring%E6%B3%A8%E5%85%A5Bean%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84%E6%B3%A8%E8%A7%A3/" alt="微信分享二维码"> -->
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://qyangcode.github.io/024/09/26/Spring%E6%B3%A8%E5%85%A5Bean%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84%E6%B3%A8%E8%A7%A3/" alt="微信分享二维码">
+      <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/10/01/Java-%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9BCollection%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/" alt="微信分享二维码"> -->
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://qyangcode.github.io/024/10/01/Java-%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9BCollection%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -401,18 +715,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2024/10/01/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          搭建个人博客流程
-        
-      </div>
-    </a>
   
-  
-    <a href="/2024/09/25/ElasticSearch%E5%AE%89%E8%A3%85%E5%88%86%E8%AF%8D%E5%99%A8%E4%B8%8E%E6%95%B4%E5%90%88SpringBoot/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ElasticSearch安装分词器与整合SpringBoot</div>
+    <a href="/2024/10/01/%E5%9F%BA%E4%BA%8EHexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于Hexo个人博客界面优化</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -439,7 +744,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Conditional"><span class="toc-number">1.</span> <span class="toc-text">@Conditional</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.</span> <span class="toc-text">条件接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">条件类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ConditionalOnProperty"><span class="toc-number">1.3.</span> <span class="toc-text">@ConditionalOnProperty</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ConditionalOnMissingBean"><span class="toc-number">1.4.</span> <span class="toc-text">@ConditionalOnMissingBean</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EnableConfigurationProperties"><span class="toc-number">2.</span> <span class="toc-text">@EnableConfigurationProperties</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text">配置属性类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.1.1.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D"><span class="toc-number">2.2.</span> <span class="toc-text">自动装配</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Profile"><span class="toc-number">3.</span> <span class="toc-text">@Profile</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">3.1.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lazy"><span class="toc-number">4.</span> <span class="toc-text">@Lazy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-number">4.1.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Primary"><span class="toc-number">5.</span> <span class="toc-text">@Primary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-DependsOn"><span class="toc-number">6.</span> <span class="toc-text">使用 @DependsOn</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text">参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PreDestroy-PostConstruct"><span class="toc-number">7.</span> <span class="toc-text">@PreDestroy | @PostConstruct</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PropertySource"><span class="toc-number">8.</span> <span class="toc-text">@PropertySource</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-number">8.1.</span> <span class="toc-text">使用示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0-1"><span class="toc-number">8.2.</span> <span class="toc-text">参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ImportResource"><span class="toc-number">9.</span> <span class="toc-text">@ImportResource</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection"><span class="toc-number">1.</span> <span class="toc-text">Collection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9B%86%E5%90%88%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">1.集合基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Collection%E6%8E%A5%E5%8F%A3%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">2.Collection接口方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Iterator"><span class="toc-number">1.3.</span> <span class="toc-text">3.Iterator</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">Collection的实现类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-List"><span class="toc-number">2.1.</span> <span class="toc-text">1.List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-list%E6%8E%A5%E5%8F%A3%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1 list接口方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-ArrayList"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2 ArrayList</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%89%A9%E5%AE%B9"><span class="toc-number">2.1.2.1.</span> <span class="toc-text">扩容</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-LinkedList"><span class="toc-number">2.1.3.</span> <span class="toc-text">1.3 LinkedList</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.3.2.</span> <span class="toc-text">方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Map"><span class="toc-number">2.2.</span> <span class="toc-text">2. Map</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1TreeMap"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1TreeMap</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#TreeMap-%E7%89%B9%E6%80%A7"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">TreeMap 特性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Queue"><span class="toc-number">2.3.</span> <span class="toc-text">3.Queue</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1PriorityQueue"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1PriorityQueue</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Deque%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BBArrayDeque"><span class="toc-number">2.4.</span> <span class="toc-text">4.Deque的实现类ArrayDeque</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%80%A7-1"><span class="toc-number">2.4.1.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-1"><span class="toc-number">2.4.2.</span> <span class="toc-text">方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">对比使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-ArrayDeque-%E4%B8%8E-LinkedList-%E7%9A%84%E4%BC%98%E5%8A%A3%EF%BC%9F"><span class="toc-number">3.1.</span> <span class="toc-text">1. ArrayDeque 与 LinkedList 的优劣？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-ArrayDeque%EF%BC%88%E6%95%B0%E7%BB%84%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97%EF%BC%89%EF%BC%9A"><span class="toc-number">3.1.1.</span> <span class="toc-text">1.1 ArrayDeque（数组双端队列）：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-LinkedList%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89%EF%BC%9A"><span class="toc-number">3.1.2.</span> <span class="toc-text">1.2 LinkedList（链表）：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%82%A3Stack%E5%91%A2"><span class="toc-number">3.2.</span> <span class="toc-text">2. 那Stack呢?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E5%92%8C%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="toc-number">3.2.1.</span> <span class="toc-text">限制和注意事项：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-number">3.2.2.</span> <span class="toc-text">使用技巧</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-ConcurrentLinkedDeque"><span class="toc-number">3.3.</span> <span class="toc-text">3. ConcurrentLinkedDeque</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9%E5%92%8C%E4%BC%98%E5%8A%BF%EF%BC%9A"><span class="toc-number">3.3.1.</span> <span class="toc-text">特点和优势：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%A4%BA%E4%BE%8B"><span class="toc-number">3.4.</span> <span class="toc-text">4. 示例</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

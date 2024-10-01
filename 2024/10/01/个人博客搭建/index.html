@@ -7,24 +7,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Spring注入Bean时用到的注解 | Hexo</title>
+  <title>搭建个人博客流程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要介绍关于SpringBoot中Bean注入常用到的一些注解   @Conditional">
+  <meta name="description" content="window环境搭建个人博客  必要的环境node.js 前去下载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring注入Bean时用到的注解">
-<meta property="og:url" content="http://example.com/2024/09/26/Spring%E6%B3%A8%E5%85%A5Bean%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84%E6%B3%A8%E8%A7%A3/index.html">
+<meta property="og:title" content="搭建个人博客流程">
+<meta property="og:url" content="http://example.com/2024/10/01/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="本文主要介绍关于SpringBoot中Bean注入常用到的一些注解   @Conditional">
+<meta property="og:description" content="window环境搭建个人博客  必要的环境node.js 前去下载">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/ad274d0905c143629ffc5c273e414aa8.jpeg#pic_center">
-<meta property="article:published_time" content="2024-09-26T09:30:32.000Z">
-<meta property="article:modified_time" content="2024-09-26T09:34:39.855Z">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/94eba5fe57b94dd3813806d095d8e153.png#pic_center">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/448a6eeaac544c078fb8be56b1268508.png#pic_center">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/eb7df3abb7f349f384e3840026e7a7ba.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/27aa7a9e8398478f85f817fa68414a84.png#pic_center">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/5cc689de6f8145228a49b15de47c0bb3.png#pic_center">
+<meta property="article:published_time" content="2024-10-01T12:01:22.000Z">
+<meta property="article:modified_time" content="2024-10-01T12:05:55.706Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="随笔">
-<meta property="article:tag" content="SpringBoot">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="网站">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i-blog.csdnimg.cn/direct/ad274d0905c143629ffc5c273e414aa8.jpeg#pic_center">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/direct/94eba5fe57b94dd3813806d095d8e153.png#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -163,14 +167,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-Spring注入Bean时用到的注解" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-个人博客搭建" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Spring注入Bean时用到的注解
+      搭建个人博客流程
     </h1>
   
 
@@ -185,8 +189,8 @@
           </a>
         
         
-        <a href="/2024/09/26/Spring%E6%B3%A8%E5%85%A5Bean%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84%E6%B3%A8%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2024-09-26T09:30:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-26</time>
+        <a href="/2024/10/01/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+  	<time datetime="2024-10-01T12:01:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-01</time>
 </a>
         
       </header>
@@ -194,100 +198,60 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>本文主要介绍关于SpringBoot中Bean注入常用到的一些注解</p>
+<p>window环境搭建个人博客</p>
 </blockquote>
-<p><img src="https://i-blog.csdnimg.cn/direct/ad274d0905c143629ffc5c273e414aa8.jpeg#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="Conditional"><a href="#Conditional" class="headerlink" title="@Conditional"></a><strong><code>@Conditional</code></strong></h2><span id="more"></span>
-
-<ul>
-<li><p><strong>用途</strong>：<code>@Conditional</code> 注解用于标记一个配置类或配置方法，告诉Spring根据指定的条件来决定是否应用这个配置。</p>
-</li>
-<li><p><strong>示例</strong>：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@Conditional(OnPropertyCondition.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyConfig</span> &#123;</span><br><span class="line">    <span class="comment">// 配置类的内容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<h2 id="必要的环境"><a href="#必要的环境" class="headerlink" title="必要的环境"></a>必要的环境</h2><h3 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://nodejs.cn/download/">前去下载</a><span id="more"></span></li>
 </ul>
-<h3 id="条件接口"><a href="#条件接口" class="headerlink" title="条件接口"></a>条件接口</h3><ul>
-<li><strong>实现条件</strong>：Spring提供了一系列条件接口，例如 <code>OnClassCondition</code>、<code>OnPropertyCondition</code>、<code>OnBeanCondition</code> 等，它们各自对应不同的条件判断逻辑。</li>
-<li>**<code>OnClassCondition</code>**：检查类路径中是否存在指定的类。</li>
-<li>**<code>OnPropertyCondition</code>**：检查系统属性或环境属性中是否存在特定的值。</li>
-<li>**<code>OnBeanCondition</code>**：检查容器中是否存在特定的Bean。</li>
-<li>**<code>OnMissingBeanCondition</code>**：与 <code>OnBeanCondition</code> 相反，检查容器中是否不存在特定的Bean。</li>
+<p><img src="https://i-blog.csdnimg.cn/direct/94eba5fe57b94dd3813806d095d8e153.png#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/2301_77207909/article/details/142285094?spm=1001.2014.3001.5501">下载教程及配置流程</a><br><img src="https://i-blog.csdnimg.cn/direct/448a6eeaac544c078fb8be56b1268508.png#pic_center" alt="在这里插入图片描述"></li>
 </ul>
-<h3 id="条件类"><a href="#条件类" class="headerlink" title="条件类"></a>条件类</h3><ul>
-<li><p><strong>自定义条件</strong>：除了Spring提供的条件接口，你也可以创建自己的条件类，实现 <code>Condition</code> 接口。<code>Condition</code> 接口定义了一个 <code>matches</code> 方法，这个方法返回一个布尔值，指示是否满足条件。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyCustomCondition</span> <span class="keyword">implements</span> <span class="title class_">Condition</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">matches</span><span class="params">(ConditionContext context, AnnotatedTypeMetadata metadata)</span> &#123;</span><br><span class="line">        <span class="comment">// 实现自定义条件逻辑</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 或者 false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>组合条件</strong>：可以使用 <code>ConditionalComposition</code> 类来组合多个条件。<code>ConditionalComposition</code> 提供了 <code>and</code>、<code>or</code> 和 <code>not</code> 方法来组合条件。</p>
-</li>
-</ul>
-<h3 id="ConditionalOnProperty"><a href="#ConditionalOnProperty" class="headerlink" title="@ConditionalOnProperty"></a><strong><code>@ConditionalOnProperty</code></strong></h3><p><code>@ConditionalOnProperty</code> 注解有几个可选属性，允许你精细控制条件匹配的逻辑：</p>
-<ul>
-<li><code>name</code>：配置属性的名称。默认情况下，它使用注解所在位置的方法名作为属性名。</li>
-<li><code>havingValue</code>：配置属性的预期值。如果配置属性存在并且其值与指定值匹配，则条件成立。</li>
-<li><code>notHavingValue</code>：与 <code>havingValue</code> 相反，配置属性存在但值不匹配时条件成立。</li>
-<li><code>matchIfMissing</code>：如果配置属性不存在，条件是否成立。默认情况下，如果属性不存在，条件不成立。</li>
-<li><code>havingAnyValue</code>：如果配置属性的值是列表中的任何一个，则条件成立。</li>
-<li><code>notMatchIfMissing</code>：与 <code>matchIfMissing</code> 相反，如果配置属性不存在，条件不成立。</li>
-</ul>
-<h3 id="ConditionalOnMissingBean"><a href="#ConditionalOnMissingBean" class="headerlink" title="@ConditionalOnMissingBean"></a><strong><code>@ConditionalOnMissingBean</code></strong></h3><ol>
-<li><strong>条件</strong>：<code>@ConditionalOnMissingBean</code> 注解检查Spring容器中是否已经存在具有指定名称或类型的Bean。如果存在，则不会创建新的Bean。</li>
-<li><strong>名称</strong>：可以通过 <code>name</code> 属性指定Bean的名称。如果指定了名称，则只有当容器中不存在具有该名称的Bean时，才会创建新的Bean。</li>
-<li><strong>类型</strong>：可以通过 <code>type</code> 属性指定Bean的类型。如果指定了类型，则只有当容器中不存在该类型的Bean时，才会创建新的Bean。</li>
-<li><strong>组合条件</strong>：可以同时使用 <code>name</code> 和 <code>type</code> 属性来组合条件，确保只有同时满足名称和类型条件时才会创建Bean。</li>
-<li><strong>依赖条件</strong>：还可以使用 <code>dependentOnBean</code> 属性来指定一个依赖的Bean名称，只有当依赖的Bean存在时，才会创建新的Bean。</li>
-</ol>
-<hr>
-<h2 id="EnableConfigurationProperties"><a href="#EnableConfigurationProperties" class="headerlink" title="@EnableConfigurationProperties"></a><code>@EnableConfigurationProperties</code></h2><h3 id="配置属性类"><a href="#配置属性类" class="headerlink" title="配置属性类"></a>配置属性类</h3><p>配置属性类通常遵循以下规范：</p>
-<ul>
-<li>类上使用 <code>@ConfigurationProperties</code> 注解。</li>
-<li>字段名应与配置文件中的属性名匹配（默认情况下，字段名和属性名是自动映射的，但不区分大小写）。</li>
-<li>可选地，可以指定 <code>prefix</code> 属性来定义配置文件中属性的命名前缀。</li>
-</ul>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>假设你有一个配置属性类 <code>MyProperties</code>，它定义了两个属性，对应 <code>application.properties</code> 文件中的 <code>myapp</code> 前缀下的属性：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;myapp&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyProperties</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String exampleProperty;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> anotherProperty;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Getters and setters for the properties</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来，在配置类中使用 <code>@EnableConfigurationProperties</code> 注解来启用 <code>MyProperties</code> 类的自动配置：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableConfigurationProperties(MyProperties.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MyProperties myProperties;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用 myProperties 字段</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h3><p>一旦启用了配置属性类的自动配置，Spring会自动：</p>
-<ul>
-<li>创建配置属性类的Bean。</li>
-<li>将配置文件中的属性值绑定到配置属性类的字段上。</li>
-<li>自动装配配置属性类的Bean到任何需要它的地方。</li>
-</ul>
-<h2 id="Profile"><a href="#Profile" class="headerlink" title="@Profile"></a><code>@Profile</code></h2><p><code>@Profile</code> 注解用于指定一个Bean或配置只在特定的Spring配置文件（profile）激活时才生效。Spring支持多个配置文件，每个配置文件可以针对不同的运行环境（如开发、测试、生产等）。</p>
-<ul>
-<li><code>@Profile(&#123;&quot;prod&quot;, &quot;test&quot;&#125;)</code> 这里的括号内列出了多个环境名称（<code>prod</code> 和 <code>test</code>），这意味着被这个注解标记的Bean或配置仅在激活了名为 <code>prod</code> 或 <code>test</code> 的profile时才会被加载和使用。</li>
-</ul>
-<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@Profile(&#123;&quot;prod&quot;, &quot;test&quot;&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> SomeBean <span class="title function_">someBean</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">SomeBean</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>MyConfig</code> 类中定义的 <code>someBean()</code> 方法只有在 <code>prod</code> 或 <code>test</code> profile被激活时才会创建 <code>SomeBean</code> 的实例。</p>
-<h2 id="Lazy"><a href="#Lazy" class="headerlink" title="@Lazy"></a><code>@Lazy</code></h2><p><code>@Lazy</code> 注解用于指示Spring容器在首次请求Bean时才创建它的实例。默认情况下，Spring容器会在应用启动时创建所有单例Bean的实例。使用 <code>@Lazy</code> 可以延迟Bean的创建，这对于减少应用启动时的资源消耗或实现其他逻辑（如懒加载）很有帮助。</p>
-<ul>
-<li>当 <code>@Lazy</code> 与 <code>@Profile</code> 结合使用时，它会影响Bean的创建时机，即使配置文件被激活。</li>
-</ul>
-<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@Profile(&#123;&quot;prod&quot;, &quot;test&quot;&#125;)</span></span><br><span class="line"><span class="meta">@Lazy</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> SomeBean <span class="title function_">someBean</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">SomeBean</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Primary"><a href="#Primary" class="headerlink" title="@Primary"></a><strong><code>@Primary</code></strong></h2><blockquote>
-<p><code>@Primary</code> 是Spring框架中的一个注解，用于指定在存在多个Bean候选者时，哪一个应该被首选注入。在依赖注入时，如果存在多个Bean实现了相同的接口或符合相同的类型，Spring需要决定使用哪个Bean。在这种情况下，<code>@Primary</code> 注解可以帮助Spring决定首选的Bean。</p>
+<h3 id="验证下载是否成功"><a href="#验证下载是否成功" class="headerlink" title="验证下载是否成功"></a>验证下载是否成功</h3><blockquote>
+<p>成功显示版本就是成功</p>
 </blockquote>
-<h2 id="使用-DependsOn"><a href="#使用-DependsOn" class="headerlink" title="使用 @DependsOn"></a>使用 <code>@DependsOn</code></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@DependsOn(&#123;&quot;openai_model&quot;, &quot;openai_use_count&quot;, &quot;user_credit_random&quot;&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyConfig</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>MyConfig</code> 配置类会在 <code>openai_model</code>、<code>openai_use_count</code> 和 <code>user_credit_random</code> 这些Bean创建之后创建。</p>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
-<li><code>value</code>：一个字符串数组，指定了依赖于的Bean的名称。</li>
-</ul>
-<h2 id="PreDestroy-PostConstruct"><a href="#PreDestroy-PostConstruct" class="headerlink" title="@PreDestroy | @PostConstruct"></a><code>@PreDestroy | @PostConstruct</code></h2><blockquote>
-<p><code>@PostConstruct</code> 是Java EE（Java Platform, Enterprise Edition）的一个注解，它用于标记一个方法，这个方法应该在应用初始化之后运行。它通常用于在依赖注入容器（如Spring框架中的Bean）初始化Bean之后执行一些初始化代码。</p>
-<p><code>@PreDestroy</code> 是Java EE（Java Platform, Enterprise Edition）的一个注解，用于标记一个方法，这个方法将在应用关闭或容器销毁Bean之前运行。它通常用于清理资源，如关闭数据库连接、释放文件句柄等。</p>
+<p><img src="https://i-blog.csdnimg.cn/direct/eb7df3abb7f349f384e3840026e7a7ba.png" alt="在这里插入图片描述"></p>
+<h3 id="cnpm"><a href="#cnpm" class="headerlink" title="cnpm"></a>cnpm</h3><p><img src="https://i-blog.csdnimg.cn/direct/27aa7a9e8398478f85f817fa68414a84.png#pic_center" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>由于访问国外镜像较慢，故下载cnpm</p>
 </blockquote>
-<h2 id="PropertySource"><a href="#PropertySource" class="headerlink" title="@PropertySource"></a><code>@PropertySource</code></h2><p><code>@PropertySource</code> 注解用于指定一个或多个配置文件的位置，Spring容器会从这些位置加载属性文件，并将其属性添加到Spring的环境中。</p>
-<h3 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.PropertySource;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@PropertySource(&quot;classpath:properties/application.properties&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppConfig</span> &#123;</span><br><span class="line">    <span class="comment">// ...配置类代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子中，<code>AppConfig</code> 配置类使用了 <code>@PropertySource</code> 注解来指定 <code>application.properties</code> 文件的位置，该文件应该位于类路径下 <code>properties</code> 目录中。</p>
-<h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><ul>
-<li><code>value</code> 或 <code>locations</code>：这两个参数可以用来指定属性文件的位置。<code>value</code> 参数接受一个字符串数组，而 <code>locations</code> 参数接受一个 <code>PropertySource</code> 对象数组。</li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">要是报这个错误</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">npm ERR! code CERT_HAS_EXPIRED</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">npm ERR! errno CERT_HAS_EXPIRED</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">就输入以下命令，在运行上面的命令</span></span><br><span class="line">npm config set strict-ssl false</span><br></pre></td></tr></table></figure>
+<ul>
+<li>检查安装1是否成功<blockquote>
+<p>运行 cnpm -v 能显示版本就是安装成功</p>
+</blockquote>
+</li>
 </ul>
-<h2 id="ImportResource"><a href="#ImportResource" class="headerlink" title="@ImportResource"></a><code>@ImportResource</code></h2><p><code>@ImportResource</code> 注解用于从XML配置文件中加载Bean定义。在Spring 3.1及以后版本中，推荐使用基于Java的配置方式，但有时仍然需要与传统的XML配置文件一起使用。</p>
+<h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><p><img src="https://i-blog.csdnimg.cn/direct/5cc689de6f8145228a49b15de47c0bb3.png#pic_center" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>本文采用hexo搭建，个人感觉比较好用，执行以下命令安装</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h2 id="正式搭建"><a href="#正式搭建" class="headerlink" title="正式搭建"></a>正式搭建</h2><blockquote>
+<p>选一个目录作为博客的主目录，在这个目录下进入git-bash</p>
+</blockquote>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><ul>
+<li>用以下命令初始化<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><ul>
+<li>访问本地博客<a href="localhost:4000">localhost:4000</a><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">先clean</span></span><br><span class="line">hexo clean</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在构建</span></span><br><span class="line">hexo g</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动</span></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h3><ul>
+<li>在你所选的目录&#x2F;source&#x2F;_posts，去修改，修改后按上面的方法在启动<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;文章&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h2><h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><ul>
+<li><code>注意</code>:你的仓库的名字必须为 <code>你的昵称.github.io</code></li>
+</ul>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">出现警告可以忽略</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><ul>
+<li>用你的编辑器打开你所选的目录下的_config.yml<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Deployment下的</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">	<span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">	<span class="attr">repo:</span> <span class="string">&#x27;你的仓库地址&#x27;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">按照提示输入账号和密码</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>刷新github看推送成功吗，通过你的<code>你的昵称.github.io</code>访问你的博客</li>
+</ul>
+<p>hexo可以换主题，各位如果感兴趣，可以b站看看</p>
 
       
 
@@ -326,11 +290,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网站</a>
         		</li>
       		
 		</ul>
@@ -386,8 +350,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/09/26/Spring%E6%B3%A8%E5%85%A5Bean%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84%E6%B3%A8%E8%A7%A3/" alt="微信分享二维码"> -->
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://qyangcode.github.io/024/09/26/Spring%E6%B3%A8%E5%85%A5Bean%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84%E6%B3%A8%E8%A7%A3/" alt="微信分享二维码">
+      <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/10/01/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" alt="微信分享二维码"> -->
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://qyangcode.github.io/024/10/01/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -401,18 +365,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2024/10/01/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/10/01/%E5%9F%BA%E4%BA%8EHexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          搭建个人博客流程
+          基于Hexo个人博客界面优化
         
       </div>
     </a>
   
   
-    <a href="/2024/09/25/ElasticSearch%E5%AE%89%E8%A3%85%E5%88%86%E8%AF%8D%E5%99%A8%E4%B8%8E%E6%95%B4%E5%90%88SpringBoot/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ElasticSearch安装分词器与整合SpringBoot</div>
+    <a href="/2024/09/26/Spring%E6%B3%A8%E5%85%A5Bean%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84%E6%B3%A8%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring注入Bean时用到的注解</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -439,7 +403,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Conditional"><span class="toc-number">1.</span> <span class="toc-text">@Conditional</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.</span> <span class="toc-text">条件接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">条件类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ConditionalOnProperty"><span class="toc-number">1.3.</span> <span class="toc-text">@ConditionalOnProperty</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ConditionalOnMissingBean"><span class="toc-number">1.4.</span> <span class="toc-text">@ConditionalOnMissingBean</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EnableConfigurationProperties"><span class="toc-number">2.</span> <span class="toc-text">@EnableConfigurationProperties</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text">配置属性类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.1.1.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D"><span class="toc-number">2.2.</span> <span class="toc-text">自动装配</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Profile"><span class="toc-number">3.</span> <span class="toc-text">@Profile</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">3.1.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lazy"><span class="toc-number">4.</span> <span class="toc-text">@Lazy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-number">4.1.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Primary"><span class="toc-number">5.</span> <span class="toc-text">@Primary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-DependsOn"><span class="toc-number">6.</span> <span class="toc-text">使用 @DependsOn</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text">参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PreDestroy-PostConstruct"><span class="toc-number">7.</span> <span class="toc-text">@PreDestroy | @PostConstruct</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PropertySource"><span class="toc-number">8.</span> <span class="toc-text">@PropertySource</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-number">8.1.</span> <span class="toc-text">使用示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0-1"><span class="toc-number">8.2.</span> <span class="toc-text">参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ImportResource"><span class="toc-number">9.</span> <span class="toc-text">@ImportResource</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%85%E8%A6%81%E7%9A%84%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">必要的环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js"><span class="toc-number">1.1.</span> <span class="toc-text">node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git"><span class="toc-number">1.2.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E4%B8%8B%E8%BD%BD%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="toc-number">1.3.</span> <span class="toc-text">验证下载是否成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cnpm"><span class="toc-number">1.4.</span> <span class="toc-text">cnpm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo"><span class="toc-number">1.5.</span> <span class="toc-text">hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%BC%8F%E6%90%AD%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">正式搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.1.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-number">2.2.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="toc-number">2.3.</span> <span class="toc-text">新建博客</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0github"><span class="toc-number">3.</span> <span class="toc-text">部署到github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">3.1.</span> <span class="toc-text">新建仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">安装插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.</span> <span class="toc-text">修改配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0%E8%BF%9C%E7%AB%AF"><span class="toc-number">3.4.</span> <span class="toc-text">部署到远端</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
